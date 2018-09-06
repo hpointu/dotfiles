@@ -42,6 +42,7 @@ Plug 'majutsushi/tagbar'
 Plug 'metakirby5/codi.vim'
 Plug 'mileszs/ack.vim'
 Plug 'morhetz/gruvbox'
+Plug 'wesgibbs/vim-irblack'
 Plug 'python-mode/python-mode'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
@@ -90,7 +91,7 @@ au BufReadPre * match ExtraWhitespace /\s\+$/
 set background=dark
 let g:gruvbox_improved_strings=0
 let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox
+colorscheme ir_black
 
 """ Todo command
 " command TODO Ggrep! "TODO" | copen
