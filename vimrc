@@ -28,12 +28,13 @@ set relativenumber
 
 """ vim-plug section
 call plug#begin('~/.vim/plugged')
+Plug 'Shougo/unite.vim'
 Plug 'alfredodeza/pytest.vim'
 Plug 'bhurlow/vim-parinfer'
 Plug 'chase/vim-ansible-yaml'
 Plug 'davidhalter/jedi-vim'
-Plug 'jpalardy/vim-slime'
 Plug 'janko-m/vim-test'
+Plug 'jpalardy/vim-slime'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kien/rainbow_parentheses.vim'
@@ -42,22 +43,23 @@ Plug 'majutsushi/tagbar'
 Plug 'metakirby5/codi.vim'
 Plug 'mileszs/ack.vim'
 Plug 'morhetz/gruvbox'
-Plug 'wesgibbs/vim-irblack'
 Plug 'python-mode/python-mode'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
-Plug 'Shougo/unite.vim'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'stephpy/vim-yaml'
 Plug 'suan/vim-instant-markdown'
 Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
+Plug 'rfunix/vim-greenisgood'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-scripts/Gummybears'
 Plug 'w0rp/ale'
+Plug 'hpointu/chillax-du-relzen', {'do': 'source /usr/bin/virtualenvwrapper.sh; mktmpenv -n -r requirements.txt; python make.py freddy.yaml; deactivate'}
 call plug#end()
 
 
@@ -91,7 +93,8 @@ au BufReadPre * match ExtraWhitespace /\s\+$/
 set background=dark
 let g:gruvbox_improved_strings=0
 let g:gruvbox_contrast_dark = 'hard'
-colorscheme ir_black
+
+colorscheme chillax_du_relzen
 
 """ Todo command
 " command TODO Ggrep! "TODO" | copen
@@ -187,3 +190,7 @@ let test#strategy = 'asyncrun'
 " 	imap <silent><buffer><expr> <C-s>     unite#do_action('split')
 " 	imap <silent><buffer><expr> <C-v>     unite#do_action('vsplit')
 " endfunction
+"
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
