@@ -33,6 +33,7 @@ Plug 'alfredodeza/pytest.vim'
 Plug 'bhurlow/vim-parinfer'
 Plug 'chase/vim-ansible-yaml'
 Plug 'davidhalter/jedi-vim'
+Plug 'hpointu/chillax-du-relzen'
 Plug 'janko-m/vim-test'
 Plug 'jpalardy/vim-slime'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -59,7 +60,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/Gummybears'
 Plug 'w0rp/ale'
-Plug 'hpointu/chillax-du-relzen', {'do': 'source /usr/bin/virtualenvwrapper.sh; mktmpenv -n -r requirements.txt; python make.py freddy.yaml; deactivate'}
 call plug#end()
 
 
