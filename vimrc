@@ -111,6 +111,7 @@ nnoremap <Space>bb :Buffers<CR>
 
 nnoremap <Space>/ :Ack 
 nnoremap <Space>gs :Gstatus<CR>
+nnoremap <Space>* "zyiw:exe "Ack ".@z.""<CR>/<C-R>z<CR>
 
 let g:SimpylFold_docstring_preview = 1
 let g:SimpylFold_fold_docstring = 0
