@@ -168,7 +168,7 @@ let g:pymode_options_colorcolumn = 0
 let g:pymode_run_bind = ",e"
 " Override view python doc key shortcut to Ctrl-Shift-d
 let g:pymode_doc_bind = ",d"
-let g:pymode_python = 'python'
+"let g:pymode_python = 'python'
 let g:pymode_lint = 0
 " let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe']  " No mccabe which is crap (but not really)
 
