@@ -6,11 +6,16 @@ set exrc
 set secure
 set hidden
 
+" Useful for proper text editing
+set linebreak
+"set spell spelllang=en_gb
+set display+=lastline
+
 set termguicolors
 
 """ Good searching
 set ignorecase
-	set smartcase
+set smartcase
 set hlsearch
 " clear search hl
 map <C-_> :noh<CR>
@@ -26,12 +31,17 @@ set clipboard=unnamedplus
 set number
 set relativenumber
 
+""" I never want more than 4
+set ts=4
+set sw=4
+
 """ vim-plug section
 call plug#begin('~/.vim/plugged')
 Plug 'Shougo/unite.vim'
 Plug 'alfredodeza/pytest.vim'
 Plug 'bhurlow/vim-parinfer'
 Plug 'chase/vim-ansible-yaml'
+Plug 'calviken/vim-gdscript3'
 Plug 'davidhalter/jedi-vim'
 Plug 'hpointu/chillax-du-relzen'
 Plug 'janko-m/vim-test'
@@ -53,14 +63,16 @@ Plug 'suan/vim-instant-markdown'
 Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
-Plug 'rfunix/vim-greenisgood'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-scripts/Gummybears'
 Plug 'w0rp/ale'
+Plug 'raimon49/requirements.txt.vim'
+Plug 'mgedmin/coverage-highlight.vim'
 call plug#end()
+
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 
 
 """ Slime comfiguration
@@ -69,10 +81,13 @@ let g:slime_paste_file = "$HOME/.slime_paste"
 let g:slime_python_ipython = 1
 let g:slime_default_config = {"socket_name": "slime", "target_pane": ":"}
 
+
+""" ALE
+
+
 """ Use rainbows !
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
-set foldlevelstart=3
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
@@ -94,7 +109,8 @@ set background=dark
 let g:gruvbox_improved_strings=0
 let g:gruvbox_contrast_dark = 'hard'
 
-colorscheme chillax_du_relzen
+"colorscheme chillax_du_relzen
+colorscheme gruvbox
 
 """ Todo command
 " command TODO Ggrep! "TODO" | copen
@@ -117,7 +133,7 @@ let g:SimpylFold_docstring_preview = 1
 let g:SimpylFold_fold_docstring = 0
 
 """ Do not fold everything on startup
-set foldlevelstart=3
+set foldlevelstart=5
 
 """ Tag bar
 nmap <F8> :TagbarToggle<CR>
@@ -163,12 +179,10 @@ let g:syntastic_always_populate_loc_list = 1
 """ python-mode stuff from Michał
 let g:pymode_syntax = 0
 let g:pymode_rope = 0
-let g:pymode_options_colorcolumn = 0
+" let g:pymode_options_colorcolumn = 0
 " Override run current python file key shortcut to Ctrl-Shift-e
-let g:pymode_run_bind = ",e"
-" Override view python doc key shortcut to Ctrl-Shift-d
-let g:pymode_doc_bind = ",d"
-"let g:pymode_python = 'python'
+" let g:pymode_run_bind = ",e"
+" let g:pymode_doc_bind = ",d"
 let g:pymode_lint = 0
 " let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe']  " No mccabe which is crap (but not really)
 
